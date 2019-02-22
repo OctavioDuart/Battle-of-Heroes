@@ -1,0 +1,17 @@
+{
+  "name": "node-with-mysql",
+  "version": "1.0.0",
+  "description": "API Rest with NodeJS and MySQL ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Octávio Duarte",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql2": "^1.6.5",
+    "sequelize": "^4.42.0"
+  }
+}
