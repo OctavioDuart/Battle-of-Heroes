@@ -26,12 +26,13 @@ router.post('/register', (req, res) => {
 
 router.get('/find', (req, res) => {
 
-    const sql = `SELECT * FROM personagens_poderes`;
+    const sql = `SELECT p.nome , w.id_poder AS poderes FROM personagens_poderes w
+                INNER JOIN personagens p ON p.id = w.id_personagem;`;
 
     con.connection.query(sql, { type: con.connection.QueryTypes.SELECT })
         .then(result => {
             if (result.length !== 0)
-                return res.status(200).json(result);
+                return res.status(200).send(result);
 
             return res.status(500).send(`Não há dados registrados`);
         })
@@ -39,11 +40,3 @@ router.get('/find', (req, res) => {
             return res.status(500).send(`Ocorreu o seguinte erro ao consultar os dados : ${error}`);
         });
 });
-
-
-
-
-module.exports = app => app.use('/personagens/poderes', router);
-
-// Poderes e Personagens
-// Relação N -> N 
