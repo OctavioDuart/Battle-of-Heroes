@@ -40,3 +40,5 @@ router.get('/find', (req, res) => {
             return res.status(500).send(`Ocorreu o seguinte erro ao consultar os dados : ${error}`);
         });
 });
+
+module.exports = app => app.use('/personagens/poderes' , router) ; 
