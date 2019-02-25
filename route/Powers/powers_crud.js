@@ -20,8 +20,8 @@ router.post('/register', (req, res) => {
 });
 
 router.get('/find', (req, res) => {
-    Poderes.findAll().
-        then(result => {
+    Poderes.findAll()
+        .then(result => {
             if (result.length !== 0)
                 return res.status(200).send(result);
             return res.status(200).send(`Não existem poderes cadastrados`);

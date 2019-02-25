@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./route/Powers/powers_crud')(app);
 require('./route/Characters/characters_crud')(app);
+require('./route/PowersAndCharacters/powers_characters_crud')(app);
 
 app.listen(port, (err) => {
     (err) ? console.error(`Ocorreu um erro ao subir o servidor : ${err}`)
