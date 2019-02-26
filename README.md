@@ -17,3 +17,15 @@ Observações :
                          );
 
 -Só escreva o código acima depois que as tabelas personagens e poderes forem declaradas
+
+_______________________________________________________________________________________________________________________________
+
+Tabela personagens_ponto_fraco , só deve ser criada depois que as tabelas personagens e poderes forem declaradas 
+
+                        CREATE TABLE personagens_ponto_fraco (
+                          id_personagem INTEGER NOT NULL,
+                            id_poder 	  INTEGER NOT NULL, 
+                            CONSTRAINT key_composed2 primary key (id_personagem , id_poder),
+                            CONSTRAINT fk_character2 foreign key (id_personagem) references personagens (id),
+                            CONSTRAINT fk_power2		foreign key (id_poder) references poderes (id)
+                        );
