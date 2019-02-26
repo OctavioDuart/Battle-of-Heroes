@@ -6,7 +6,7 @@ const Personagens = db.connection.define('personagens', {
         allowNull: false
     },
     sexo: {
-        type: db.Sequelize.STRING,
+        type: db.Sequelize.STRING(1),
         allowNull: false
     },
     tipo: {
@@ -14,7 +14,7 @@ const Personagens = db.connection.define('personagens', {
         allowNull: false
     },
     universo: {
-        type: db.Sequelize.STRING,
+        type: db.Sequelize.STRING(6),
         allowNull: false
     },
     origem: {
@@ -22,9 +22,10 @@ const Personagens = db.connection.define('personagens', {
         allowNull: false
     },
     time: {
-        type: db.Sequelize.STRING,
+        type: db.Sequelize.STRING(50),
         allowNull: false
     }
 });
 
+//Personagens.sync({ force: true });
 module.exports = Personagens;

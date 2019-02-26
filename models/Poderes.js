@@ -6,4 +6,5 @@ const Poderes = db.connection.define('poderes', {
     }
 });
 
+
 module.exports = Poderes;
